@@ -41,7 +41,10 @@ namespace MyFirstVuelingWebApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyFirstVuelingWebApi v1"));
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyFirstVuelingWebApi v1");
+                 });
             }
 
             app.UseHttpsRedirection();

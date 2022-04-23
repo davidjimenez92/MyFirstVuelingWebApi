@@ -19,4 +19,5 @@ RUN dotnet publish "MyFirstVuelingWebApi.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "MyFirstVuelingWebApi.dll"]
+# ENTRYPOINT ["dotnet", "MyFirstVuelingWebApi.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet MyFirstVuelingWebApi.dll
